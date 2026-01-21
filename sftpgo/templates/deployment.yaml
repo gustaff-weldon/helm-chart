@@ -169,6 +169,9 @@ spec:
       {{- with .Values.podPriorityClassName }}
       priorityClassName: {{ . }}
       {{- end }}
+      {{- with .Values.podTerminationGracePeriodSeconds }}
+      terminationGracePeriodSeconds: {{ . }}
+      {{- end }}
       {{- with .Values.tolerations }}
       tolerations:
         {{- toYaml . | nindent 8 }}
